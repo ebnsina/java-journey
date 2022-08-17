@@ -58,10 +58,10 @@ public class Main {
         System.out.println(b);
 
         // Get input from user
-        // Scanner scanner = new Scanner(System.in);
-        // System.out.print("Enter your name: ");
-        // String name = scanner.nextLine();
-        // System.out.println("You name " + name);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("You name " + name);
 
         // Mortgage Calculator
 
@@ -70,14 +70,14 @@ public class Main {
 
         Scanner mortgageScanner = new Scanner(System.in);
 
-        System.out.print("Principal: ");
+        // System.out.print("Principal: ");
         int principle = mortgageScanner.nextInt();
 
-        System.out.print("Annual Interest Rate: ");
+        // System.out.print("Annual Interest Rate: ");
         float annualInterest = mortgageScanner.nextFloat();
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
 
-        System.out.print("Period (in Years): ");
+        // System.out.print("Period (in Years): ");
         byte years = mortgageScanner.nextByte();
         int numberOfPayments = years * MONTHS_IN_YEAR;
 
@@ -87,5 +87,101 @@ public class Main {
 
         String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + formattedMortgage);
+
+
+        // Control Flow
+        // Comparison operator: >, <, >=, <=, ==, !=
+        int x2 = 10;
+        int x3 = 12;
+        System.out.println(x2 == x3);
+
+        // Logical operator: &&, ||, !
+        boolean hasHighIncome = true;
+        boolean isAdult = false;
+        boolean isLoanEligible = hasHighIncome && isAdult;
+        boolean isNotLoanEligible = hasHighIncome || isAdult;
+
+        // If statement
+        int temperature = 45;
+        if (temperature > 40) {
+            System.out.println("Today is too hot!");
+        } else {
+            System.out.println("Enjoy the sun!");
+        }
+
+        // Ternary
+        int income = 228_000;
+        String airClass = income > 100_000 ? "First Class" : "Economy Class";
+        System.out.println(airClass);
+
+        // Switch Case
+        String role = "admin";
+        switch (role) {
+            case "admin":
+                System.out.println("You're admin!");
+                break;
+            case "moderator":
+                System.out.println("Moderator!");
+            default:
+                System.out.println("Guest user");
+        }
+
+        // Fizz Buzz
+        Scanner fizzBuzzScanner = new Scanner(System.in);
+        System.out.print("Enter number: ");
+        int fizzBuzzNumber = fizzBuzzScanner.nextInt();
+
+        if (fizzBuzzNumber % 5 == 0 && fizzBuzzNumber % 3 == 0) {
+            System.out.println("FizzBuzz");
+        } else if (fizzBuzzNumber % 5 == 0) {
+            System.out.println("Fizz");
+        } else if (fizzBuzzNumber % 3 == 0) {
+            System.out.println("Buzz");
+        } else {
+            System.out.println(fizzBuzzNumber);
+        }
+
+
+        // Loops
+
+        // For loop
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
+
+        // While loop
+        String userInput = "";
+        Scanner userInputScanner = new Scanner(System.in);
+        while (userInput.equals("quit")) {
+            System.out.println("Input: ");
+            userInput = userInputScanner.next().toLowerCase();
+            System.out.println(userInput);
+        }
+
+        // Do while
+        do {
+            System.out.println("Input: ");
+            userInput = userInputScanner.next().toLowerCase();
+            System.out.println(userInput);
+        } while (!userInput.equals("quit"));
+
+        // break: terminate the loop
+        // continue: moves control to the beginning of the loop
+        while (true) {
+            System.out.println("Input: ");
+            userInput = userInputScanner.next().toLowerCase();
+            if (userInput == "pass")
+                continue;
+            if (userInput.equals("quit"))
+                break;
+            System.out.println(userInput);
+        }
+
+        // For each loop
+        String[] products = {"MacBook Pro", "iPhone 14", "Samsung Flip 4"};
+        for (String product : products) {
+            System.out.println(product);
+        }
     }
+
 }
