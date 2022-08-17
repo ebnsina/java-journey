@@ -36,6 +36,7 @@ public class Main {
     public static double readNumber(String prompt, double min, double max) {
         Scanner scanner = new Scanner(System.in);
         double value;
+
         while (true) {
             System.out.println(prompt);
             value = scanner.nextFloat();
@@ -55,12 +56,8 @@ public class Main {
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
         short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
 
-        double balance = principle
-                *
-                (Math.pow(1 + monthlyInterest, numberOfPayments) - Math.pow(1 + monthlyInterest, numberOfPaymentsMade))
+        return principle * (Math.pow(1 + monthlyInterest, numberOfPayments) - Math.pow(1 + monthlyInterest, numberOfPaymentsMade))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        return balance;
     }
 
 
@@ -71,11 +68,9 @@ public class Main {
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
         short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
 
-        double mortgage = principle
+        return principle
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        return mortgage;
     }
 
 }
