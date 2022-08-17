@@ -1,6 +1,11 @@
 # Java
 
 
+## Software & Tools
+- [Download Java](https://www.java.com/en/download/)
+- [Download Intellij Idea](https://www.jetbrains.com/idea/download/)
+
+
 
 ### Fundamentals
 - Basic
@@ -10,7 +15,7 @@
 
 
 
-### Object Orientend Programming (OOP)
+### Object-Oriented Programming (OOP)
 - Introduction
 - Classes
 - Refactoring to OOP
